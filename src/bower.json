@@ -1,0 +1,23 @@
+{
+  "name": "health_tracker",
+  "authors": [
+    "developer2020 <dev276236@gmail.com>"
+  ],
+  "description": "health traker project",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3",
+    "backbone": "~1.3.3"
+  }
+}

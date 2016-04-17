@@ -1,0 +1,4 @@
+src/bower_components/
+node_modules/
+jshint-output.log
+bug_list.txt
