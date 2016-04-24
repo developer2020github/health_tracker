@@ -17,16 +17,7 @@
     <div>enter food name:</div>
     <input type="text" value="Type here">
     <div>
-        <ul>
-            <li><span>Item:</span><span>calories</span>
-            </li>
-            <li><span>Macaroni2</span><span>200 kkal</span>
-                <button>add</button>
-            </li>
-            <li><span>Macaroni3</span><span>400 kkal</span>
-                <button>add</button>
-            </li>
-        </ul>
+        <ul id = "current-list"></ul>
     </div>
     <div>
         <h4>Selected items: </h4>
@@ -43,12 +34,22 @@
         <button>clear
         </button>
     </div>
+
+    <script type="text/template" id="food-item-template">
+    <li><span><%= name %></span><span><%= calories %></span>
+    </script>
     <!--build:js js/main.min.js -->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
     <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
     <script type="text/javascript" src="js/lib.js"></script>
     <script type="text/javascript" src="js/nutritionix_handler.js"></script>
+
+    <script type="text/javascript" src="js/food_item_model.js"></script>
+    <script type="text/javascript" src="js/current_food_items_collection.js"></script>
+    <script type="text/javascript" src="js/item_view.js"></script>
+    <script type="text/javascript" src="js/list_of_food_items_view.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <!-- endbuild -->
 </body>

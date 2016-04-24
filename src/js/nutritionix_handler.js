@@ -11,6 +11,7 @@ var NutritonixHandler = function() {
 
 }
 
+
 NutritonixHandler.prototype.test = function() {
     var search_str = "https://api.nutritionix.com/v1_1/search/cheddar%20cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=9fc48220&appKey=a3e3cafed57db6fa5ab87d37072dec11";
     var cb_ok = function(r) {
