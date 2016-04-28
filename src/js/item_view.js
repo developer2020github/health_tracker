@@ -6,6 +6,11 @@ var FoodItemView =  Backbone.View.extend({
     // Cache the template function for a single item.
     template: _.template($('#food-item-template').html()),
 
+    // The DOM events specific to an item.
+    events: {'click .remove': 'remove_item', 
+             'click .select': 'select_item'
+    },
+
     initialize: function() {
 
     this.listenTo(this.model, 'change', this.render);
@@ -18,6 +23,13 @@ var FoodItemView =  Backbone.View.extend({
      var htmlOutput = this.template(this.model.toJSON());
      this.$el.html(htmlOutput);
      return this;
-    }
+    },
+
+    remove_item: function(){
+     this.model.destroy();
+    },
+
+    select_item: function(){
+        this.remove();    }
 
 });

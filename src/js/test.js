@@ -31,4 +31,8 @@ function test_main() {
      current_list_view.add_item(food_item1);
      current_list_view.add_item(food_item2);
      current_list_view.add_item(food_item3);
+
+     //var selected_list_view = new ListOfFoodItems(); 
+     //selected_list_view.add_item(food_item1);
+     //selected_list_view.add_item(food_item2);
 }

@@ -17,26 +17,21 @@
     <div>enter food name:</div>
     <input type="text" value="Type here">
     <div>
-        <ul id = "current-list"></ul>
+        <ul id ="current-list"></ul>
     </div>
     <div>
         <h4>Selected items: </h4>
-        <ul>
-            <li><span>Macaroni2</span><span>200 kkal</span>
-                <button>del</button>
-            </li>
-            <li><span>Macaroni3</span><span>400 kkal</span>
-                <button>del</button>
-            </li>
-            <li><span>Total</span><span>600 kkal</span></li>
-        </ul>
-        <button>save</button>
-        <button>clear
-        </button>
+        <div>
+         <ul id ="selected-list"></ul>
+        </div>
+        <button>save all</button>
+        <button>clear all</button>
     </div>
 
     <script type="text/template" id="food-item-template">
-    <li><span><%= name %></span><span><%= calories %></span>
+    <span><%= name %></span><span><%= calories %></span>
+    <button class="remove">remove</button>
+    <button class="select">select</button>
     </script>
     <!--build:js js/main.min.js -->
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
