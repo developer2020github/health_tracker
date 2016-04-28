@@ -1,4 +1,5 @@
 //test module. to be removed later.
+var selected_list_view; 
 
 function test_main() {
     var food_item1 = new FoodItem({
@@ -25,6 +26,8 @@ function test_main() {
 	 current_food_items.add(food_item2);
 	 current_food_items.add(food_item3);
 
+     selected_list_view = new SelectedListOfFoodItems(); 
+
 	 var current_list_view = new ListOfFoodItems(); 
      //console.log(ItemView);
      //var item_view7 = new FoodItemView();
@@ -32,7 +35,7 @@ function test_main() {
      current_list_view.add_item(food_item2);
      current_list_view.add_item(food_item3);
 
-     //var selected_list_view = new ListOfFoodItems(); 
+     
      //selected_list_view.add_item(food_item1);
      //selected_list_view.add_item(food_item2);
 }

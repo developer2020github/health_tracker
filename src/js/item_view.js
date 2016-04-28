@@ -28,8 +28,11 @@ var FoodItemView =  Backbone.View.extend({
     remove_item: function(){
      this.model.destroy();
     },
-
+     
+   
     select_item: function(){
+        selected_list_view.add_item(this.model);
         this.remove();    }
+
 
 });
