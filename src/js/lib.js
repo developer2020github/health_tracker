@@ -24,3 +24,55 @@ function httpGetAsync(theUrl, callback_ok, callback_error) {
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
+
+JSONTest = function() {
+
+    var resultDiv = $("#resultDivContainer");
+    data = {
+  "appId": "YOUR_APP_ID",
+  "appKey": "YOUR_APP_KEY",
+  "fields": [
+    "item_name",
+    "brand_name",
+    "nf_calories",
+    "nf_sodium",
+    "item_type"
+  ],
+  "offset": 0,
+  "limit": 50,
+  "sort": {
+    "field": "nf_calories",
+    "order": "desc"
+  },
+  "min_score": 0.5,
+  "query": "starbucks AND frap*",
+  "filters": {
+    "not": {
+      "item_type": 2
+    },
+    "nf_calories": {
+      "from": 0,
+      "to": 400
+    }
+  }
+}
+    $.ajax({
+        url: "https://example.com/api/",
+        type: "POST",
+        data: { apiKey: "23462", method: "example", ip: "208.74.35.5" },
+        dataType: "json",
+        success: function (result) {
+            switch (result) {
+                case true:
+                    processResponse(result);
+                    break;
+                default:
+                    resultDiv.html(result);
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+        }
+    });
+};

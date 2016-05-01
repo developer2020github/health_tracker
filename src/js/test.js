@@ -1,41 +1,28 @@
 //test module. to be removed later.
-var selected_list_view; 
+var selected_list_view;
+var current_food_items;
+var current_list_view;
+
+function add_food_item(item_name, n_calories) {
+    var new_item = new FoodItem({
+        name: item_name,
+        calories: n_calories
+    });
+
+    current_list_view.add_item(new_item);
+}
 
 function test_main() {
-    var food_item1 = new FoodItem({
-        name: 'First Food item',
-        calories: 5
+
+    current_food_items = new CurrentFoodItemsCollection;
+
+    selected_list_view = new SelectedListOfFoodItems();
+
+    current_list_view = new ListOfFoodItems();
+    var n = new NutritonixHandler();
+
+    $("#food-item-search-button").click(function() {
+        var user_entered_item = $('#food_item_search_name').val();
+        n.get_item_info_post(user_entered_item, 5, add_food_item);
     });
-
-
-    var food_item2 = new FoodItem({
-        name: 'Second Food item',
-        calories: 15
-    });
-
-
-
-    var food_item3 = new FoodItem({
-        name: 'Third Food item',
-        calories: 25
-    });
-
-
-     var current_food_items  = new CurrentFoodItemsCollection;
-	 current_food_items.add(food_item1);
-	 current_food_items.add(food_item2);
-	 current_food_items.add(food_item3);
-
-     selected_list_view = new SelectedListOfFoodItems(); 
-
-	 var current_list_view = new ListOfFoodItems(); 
-     //console.log(ItemView);
-     //var item_view7 = new FoodItemView();
-     current_list_view.add_item(food_item1);
-     current_list_view.add_item(food_item2);
-     current_list_view.add_item(food_item3);
-
-     
-     //selected_list_view.add_item(food_item1);
-     //selected_list_view.add_item(food_item2);
 }
