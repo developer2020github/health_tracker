@@ -4,12 +4,11 @@
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //========================================================
-//This module will handle an interface with nutritionix
+//This module will handle interface with nutritionix
 var NutritonixHandler = function() {
     this.app_id = "9fc48220";
     this.API_KEY = "a3e3cafed57db6fa5ab87d37072dec11";
-
-}
+};
 
 
 NutritonixHandler.prototype.test = function() {
@@ -57,7 +56,7 @@ NutritonixHandler.prototype.get_item_info = function(food_name){
 NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback) {
 //http://stackoverflow.com/questions/11456771/using-json-post-request
 //var resultDiv = $("#resultDivContainer");
-    var name = item_name+"*";
+var name = item_name+"*";
   
 var data2 = {
   "appId": "9fc48220",
@@ -94,19 +93,11 @@ var data2 = {
             console.log(result);
             console.log(result.hits);
             console.log(result.hits[0]);
-            console.log(result.hits[0].fields);
-            /*
-            switch (result) {
-                case true:
-                    processResponse(result);
-                    break;
-                default:
-                    resultDiv.html(result);
-            }*/
+            //console.log(result.hits[0].fields);
         },
         error: function (xhr, ajaxOptions, thrownError) {
         alert(xhr.status);
         alert(thrownError);
         }
     });
-};
+}
