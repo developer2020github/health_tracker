@@ -74,10 +74,7 @@ var data2 = {
     "order": "asc"
   },
   "min_score": 0.5,
-  "query": name,
-  "filters": {
-      "item_type": 3
-  }
+  "query": name
 }
     $.ajax({
         url: "https://api.nutritionix.com/v1_1/search/",

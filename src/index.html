@@ -2,7 +2,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Health tracker</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +17,7 @@
     <input id= "food_item_search_name", type="text" value="Type here">
     <button id="food-item-search-button">search</button>
     <div>
-        <ul id ="current-list"></ul>
+        <ul class = "list-of-items" id ="current-list"></ul>
     </div>
     <div>
         <h4>Selected items: </h4>
@@ -32,7 +31,7 @@
     </div>
 
     <script type="text/template" id="food-item-template">
-    <span><%= name %></span><span><%= calories %></span>
+    <span class="food-item"><span class = "food-item-name"><%= name %></span><span class="food-item-calories"><%= calories %></span></span>
     <button class="remove">remove</button>
     <button class="select">select</button>
     </script>
