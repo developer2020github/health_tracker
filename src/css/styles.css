@@ -53,3 +53,23 @@ body, input, button, select, option, textarea{
 	list-style: none;
 	
 }
+/*
+ http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css
+http://jsfiddle.net/TB43r/2196/
+*/
+
+.food-item-internal
+{   height: 3em;
+	width: 250px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+}
+
+.calories-internal{
+	height: 3em;
+	width: 50px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+} 

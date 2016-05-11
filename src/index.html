@@ -6,7 +6,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--build:css css/styles.min.css-->
-    
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css\styles.css">
     <!--endbuild-->
@@ -39,7 +38,19 @@
         </div>
     </div>
     <script type="text/template" id="food-item-template">
-        <span class="food-item"><span class = "food-item-name"><%= name %></span><span class="food-item-calories"><span><%= calories %></span></span>
+        <span class="food-item">
+        <span class = "food-item-name">
+        <div class = "food-item-internal">
+        <%= name %>
+        </div>
+        </span>
+        <span class="food-item-calories">
+        <span>
+        <div class = "calories-internal">
+         <%= calories %>
+         </div>
+        </span>
+        </span>
         <button class="remove">remove</button>
         <button class="select">select</button>
         </span>

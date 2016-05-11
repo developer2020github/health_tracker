@@ -25,4 +25,9 @@ function test_main() {
         var user_entered_item = $('#food_item_search_name').val();
         n.get_item_info_post(user_entered_item, 5, add_food_item);
     });
+
+
+    //test code to work with CSS/HTML
+    n.get_item_info_post("Pizza", 5, add_food_item);
+    n.get_item_info_post("Meatballs", 5, add_food_item);
 }
