@@ -5,36 +5,27 @@ body, input, button, select, option, textarea{
     text-align: center;
 }
 
-.outer {
-  display : flex;
-  align-items : center;
+.food-item-name, .food-item-calories, .remove, .select, .food-item-internal, .calories-internal{
+	height: 3em;
+	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
 }
 
-.remove{
-	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
-	min-height: 3em;
+.remove, .select{
 	border: none;
 	display: inline-block;
 	padding: 0;
 	margin: 5px;
 }
-.select{
-	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
-	min-height: 3em;
+
+.food-item-name, .food-item-calories{
 	display: inline-block;
-	border: none;
-	padding: 0;
-	margin: 5px;
+	vertical-align: middle;
 }
 
 .food-item-name{
 	background-color: #DFDCDC;
 	width: 250px;
 	margin: 5px;
-	display: inline-block;
-	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
-	min-height: 3em;
-	vertical-align: middle;
 }
 
 .food-item-calories{
@@ -42,32 +33,28 @@ body, input, button, select, option, textarea{
 	width: 50px;
 	margin-top:auto;
     margin-bottom:auto;
-	display: inline-block;
-	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
-	min-height: 3em;
-	height: 3em;
-	vertical-align: middle;
 }
 
 .list-of-items{
 	list-style: none;
-	
 }
+
 /*
  http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css
 http://jsfiddle.net/TB43r/2196/
 */
 
-.food-item-internal
-{   height: 3em;
-	width: 250px;
+.food-item-internal, .calories-internal{   
     vertical-align: middle;
     display: table-cell;
     text-align: center;
 }
 
+.food-item-internal{
+	width: 250px;
+}
+
 .calories-internal{
-	height: 3em;
 	width: 50px;
     vertical-align: middle;
     display: table-cell;
