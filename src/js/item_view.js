@@ -9,7 +9,7 @@ var FoodItemView =  Backbone.View.extend({
     // The DOM events specific to an item.
     events: {'click .remove': 'remove_item', 
              'click .select': 'select_item'
-    },
+     },
 
     initialize: function() {
 
@@ -27,12 +27,16 @@ var FoodItemView =  Backbone.View.extend({
 
     remove_item: function(){
      this.model.destroy();
+     console.log('model destroyed');
     },
      
    
     select_item: function(){
-        selected_list_view.add_item(this.model);
+        //selected_list_view.add_item(this.model);
+        this.model.select(); 
+        selected_items_collection.add(this.model);
         this.remove();    }
+
 
 
 });

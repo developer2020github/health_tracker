@@ -2,6 +2,7 @@
 var selected_list_view;
 var current_food_items;
 var current_list_view;
+var selected_items_collection; 
 
 function add_food_item(item_name, n_calories) {
     var new_item = new FoodItem({
@@ -14,9 +15,9 @@ function add_food_item(item_name, n_calories) {
 
 function test_main() {
 
-    current_food_items = new CurrentFoodItemsCollection;
-
-    selected_list_view = new SelectedListOfFoodItems();
+    //current_food_items = new CurrentFoodItemsCollection;
+    selected_items_collection = new SelectedFoodItemsCollection();
+    selected_list_view = new SelectedListOfFoodItems({collection: selected_items_collection});
 
     current_list_view = new ListOfFoodItems();
     var n = new NutritonixHandler();
