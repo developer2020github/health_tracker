@@ -5,6 +5,8 @@
 var SelectedFoodItemsCollection = Backbone.Collection.extend({
     model: FoodItem,
 
+    localStorage: new Backbone.LocalStorage('food-tracker-backbone'),
+
     get_total_calories: function() {
         var total_calories = 0.0;
         this.each(function(item) {
