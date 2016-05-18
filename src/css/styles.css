@@ -5,17 +5,30 @@ body, input, button, select, option, textarea{
     text-align: center;
 }
 
-.food-item-name, .food-item-calories, .remove, .select, .food-item-internal, .calories-internal{
+body{
+	background-color: #3B3A3A;
+}
+h2, h4{
+	color: #F5F4F4;
+}
+.food-item-name, .food-item-calories, .save-all, .clear-all, .remove, .select, .food-item-internal, .calories-internal{
 	height: 3em;
-	box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	/*box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);*/
 }
 
-.remove, .select{
-	border: none;
+.remove, .select, .save-all, .clear-all{
 	display: inline-block;
-	padding: 0;
+	/*padding: 0;*/
+	border:5px outset #E6E3E3;
 	margin: 5px;
+    border-color: #E6E3E3;
 }
+
+.save-all, .clear-all{
+	width: 37%;
+}
+
 
 .food-item-name, .food-item-calories{
 	display: inline-block;
@@ -23,7 +36,7 @@ body, input, button, select, option, textarea{
 }
 
 .food-item-name{
-	background-color: #DFDCDC;
+	background-color: #30BC7F;
 	width: 250px;
 	margin: 5px;
 }
