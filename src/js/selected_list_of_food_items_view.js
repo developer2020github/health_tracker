@@ -1,3 +1,7 @@
+var app = app || {};
+
+(function () {
+
 var SelectedListOfFoodItems = Backbone.View.extend({
 
     el: '#selected-list',
@@ -12,6 +16,7 @@ var SelectedListOfFoodItems = Backbone.View.extend({
         this.listenTo(this.collection, 'remove', this.on_remove);
         this.render(); 
     },
+
 
     on_remove: function(){
         this.$list.find(".total-calories").remove();
@@ -33,3 +38,6 @@ var SelectedListOfFoodItems = Backbone.View.extend({
     }
 
 });
+
+    app.selected_list_view = new SelectedListOfFoodItems({collection: app.selected_items_collection});
+})();

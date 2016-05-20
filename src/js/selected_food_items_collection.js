@@ -1,6 +1,9 @@
 
 //new approach: have only one collection - selected items
 //keep it linked to selected items view. 
+var app = app || {};
+
+(function () {
 
 var SelectedFoodItemsCollection = Backbone.Collection.extend({
     model: FoodItem,
@@ -16,3 +19,6 @@ var SelectedFoodItemsCollection = Backbone.Collection.extend({
 
     },
 });
+
+    app.selected_items_collection = new SelectedFoodItemsCollection();
+})();

@@ -1,4 +1,5 @@
 //www.sitepoint.com/backbone-basics-models-views-collections-templates/
+var app = app || {};
 var FoodItemView =  Backbone.View.extend({
     //http://stackoverflow.com/questions/16172671/what-is-use-of-tagname-id-and-classname-properties-in-backbone-view-while-we
     tagName: 'li',
@@ -11,8 +12,8 @@ var FoodItemView =  Backbone.View.extend({
              'click .select': 'select_item'
      },
 
-    initialize: function() {
-
+    initialize: function(selected_item_collection) {
+    //this.selected_item_collection = selected_item_collection; 
     this.listenTo(this.model, 'change', this.render);
 	this.listenTo(this.model, 'destroy', this.remove);
 
@@ -34,9 +35,6 @@ var FoodItemView =  Backbone.View.extend({
     select_item: function(){
         //selected_list_view.add_item(this.model);
         this.model.select(); 
-        selected_items_collection.add(this.model);
+        app.selected_items_collection.add(this.model);
         this.remove();    }
-
-
-
 });

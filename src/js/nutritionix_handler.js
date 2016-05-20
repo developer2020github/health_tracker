@@ -5,6 +5,8 @@
 //e-mail:  dev276236@gmail.com
 //========================================================
 //This module will handle interface with nutritionix
+var app = app || {};
+
 var NutritonixHandler = function() {
     this.app_id = "9fc48220";
     this.API_KEY = "a3e3cafed57db6fa5ab87d37072dec11";
@@ -53,7 +55,7 @@ NutritonixHandler.prototype.get_item_info = function(food_name){
 }
 
 
-NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback) {
+NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback, self) {
 //http://stackoverflow.com/questions/11456771/using-json-post-request
 //var resultDiv = $("#resultDivContainer");
 var name = item_name+"*";
@@ -85,7 +87,7 @@ var data2 = {
             $.each(result.hits, function( idx, o ){
                 console.log(o.fields.item_name);
                 console.log(o.fields.nf_calories);
-                add_item_callback(o.fields.item_name, o.fields.nf_calories);
+                add_item_callback(o.fields.item_name, o.fields.nf_calories, self);
             })
             console.log(result);
             console.log(result.hits);
@@ -98,3 +100,5 @@ var data2 = {
         }
     });
 }
+
+app.nutritonix_handler = new NutritonixHandler();
