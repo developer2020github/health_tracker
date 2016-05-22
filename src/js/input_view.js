@@ -41,8 +41,8 @@ var InputView = Backbone.View.extend({
     },
 
     clear_current_list: function(){
-        console.log('clear_current_list');
-        this.current_list_view.clear_all();
+        
+       app.current_items_collection.reset(); 
     }
 });
 

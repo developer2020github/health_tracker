@@ -6,6 +6,7 @@ var ListOfFoodItems = Backbone.View.extend({
     initialize: function () {
     	this.$list=$('#current-list');
     	this.listenTo(this.collection, 'add', this.on_model_add);
+        this.listenTo(this.collection, 'reset', this.on_model_reset);
     },
 
 	on_model_add: function(){
@@ -13,5 +14,9 @@ var ListOfFoodItems = Backbone.View.extend({
         var food_item_view = new FoodItemView({ model: last_model });
         this.$list.append(food_item_view.render().el);
 	 },
+
+     on_model_reset: function(){
+        this.$list.empty(); 
+     }
 
 	});

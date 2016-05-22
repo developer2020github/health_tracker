@@ -16,7 +16,7 @@ var FoodItemView = Backbone.View.extend({
     initialize: function(selected_item_collection) {
         //this.selected_item_collection = selected_item_collection; 
         this.listenTo(this.model, 'change', this.render);
-        this.listenTo(this.model, 'destroy', this.remove);
+        this.listenTo(this.model, 'destroy', this.call_detroy);
 
     },
 
@@ -27,6 +27,10 @@ var FoodItemView = Backbone.View.extend({
         return this;
     },
 
+    call_detroy: function(){
+        this.remove(); 
+    },
+
     remove_item: function() {
         this.model.destroy();
     },
@@ -34,7 +38,7 @@ var FoodItemView = Backbone.View.extend({
     select_item: function() {
         this.model.select();
         app.selected_items_collection.add(this.model.clone());
-        this.remove();
-        this.model.destroy();
+        //this.model.destroy();
+        //this.remove();
     }
 });
