@@ -126,7 +126,7 @@ return cache.clearAll(callback)
 
 gulp.task('build', function (callback) {
 runSequence('prefix_css','clean:dist',
-['useref', 'images', 'fonts'],'minify_html',
+['useref'],'minify_html',
 'restore_css_source',
 'clean:temp',
  callback
