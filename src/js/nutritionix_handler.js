@@ -85,13 +85,13 @@ var data2 = {
         dataType: "json",
         success: function (result) {
             $.each(result.hits, function( idx, o ){
-                console.log(o.fields.item_name);
-                console.log(o.fields.nf_calories);
+                /*console.log(o.fields.item_name);
+                console.log(o.fields.nf_calories);*/
                 add_item_callback(o.fields.item_name, o.fields.nf_calories, self);
             })
-            console.log(result);
+            /*console.log(result);
             console.log(result.hits);
-            console.log(result.hits[0]);
+            console.log(result.hits[0]);*/
             //console.log(result.hits[0].fields);
         },
         error: function (xhr, ajaxOptions, thrownError) {

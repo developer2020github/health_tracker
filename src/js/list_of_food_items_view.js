@@ -5,10 +5,13 @@ var ListOfFoodItems = Backbone.View.extend({
 
     initialize: function () {
     	this.$list=$('#current-list');
+    	this.listenTo(this.collection, 'add', this.on_model_add);
     },
 
-	add_item: function(food_item){
-	  var food_item_view = new FoodItemView({ model: food_item });
-	  this.$list.append(food_item_view.render().el);
-	 }
+	on_model_add: function(){
+	    var last_model = this.collection.at(this.collection.length - 1);
+        var food_item_view = new FoodItemView({ model: last_model });
+        this.$list.append(food_item_view.render().el);
+	 },
+
 	});

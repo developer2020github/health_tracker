@@ -16,9 +16,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 local">
-                <div>enter food name:</div>
+                <h4>Enter food item:</h4>
                 <input id="food_item_search_name" , type="text" value="Type here">
                 <button id="food-item-search-button">search</button>
+                <button id="clear-current-list-button">clear</button>
                 <div>
                     <ul class="list-of-items" id="current-list"></ul>
                 </div>
@@ -52,7 +53,7 @@
         </span>
         </span>
         <button class="remove">remove</button>
-        <button class="select">select</button>
+        <button class="select">select<br>decelect</button>
         </span>
     </script>
     <script type="text/template" id="total-calories-template">
@@ -72,6 +73,8 @@
     <script type="text/javascript" src="js/selected_food_items_collection.js"></script>
     <script type="text/javascript" src="js/item_view.js"></script>
     <script type="text/javascript" src="js/selected_list_of_food_items_view.js"></script>
+    <script type="text/javascript" src="js/list_of_food_items_view.js"></script>
+    <script type="text/javascript" src="js/current_food_items_collection.js"></script>
     <script type="text/javascript" src="js/input_view.js"></script>
     <!-- endbuild -->
 </body>
