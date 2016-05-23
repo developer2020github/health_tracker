@@ -1,4 +1,10 @@
 
+//========================================================
+//Health tracker
+//2016
+//Author:  developer2020 
+//e-mail:  dev276236@gmail.com
+//========================================================
 //new approach: have only one collection - selected items
 //keep it linked to selected items view. 
 var app = app || {};

@@ -1,3 +1,9 @@
+//========================================================
+//Health tracker
+//2016
+//Author:  developer2020 
+//e-mail:  dev276236@gmail.com
+//========================================================
 //collection of items in the input list
 var app = app || {};
 

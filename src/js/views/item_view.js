@@ -1,3 +1,9 @@
+//========================================================
+//Health tracker
+//2016
+//Author:  developer2020 
+//e-mail:  dev276236@gmail.com
+//========================================================
 //www.sitepoint.com/backbone-basics-models-views-collections-templates/
 var app = app || {};
 var FoodItemView = Backbone.View.extend({
