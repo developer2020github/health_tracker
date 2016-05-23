@@ -20,6 +20,8 @@ var InputView = Backbone.View.extend({
     initialize: function () {
             this.$entered_item = this.$("#food_item_search_name");
             this.current_list_view = new ListOfFoodItems({collection: app.current_items_collection});
+            console.log(" app.selected_items_collection.fetch();");
+            app.selected_items_collection.fetch(); 
             //this.nutritonix_handler = new NutritonixHandler();
         },
 
@@ -48,8 +50,8 @@ var InputView = Backbone.View.extend({
     test: function(){
       app.nutritonix_handler.get_item_info_post("pizza", 5, this.add_food_item, this);
 
-      app.selected_items_collection.add(new FoodItem({name: "pizza first", calories: 540}));
-      app.selected_items_collection.add(new FoodItem({name: "pizza second long", calories: 450}));
+      //app.selected_items_collection.add(new FoodItem({name: "pizza first", calories: 540}));
+      //app.selected_items_collection.add(new FoodItem({name: "pizza second long", calories: 450}));
     } 
 });
 

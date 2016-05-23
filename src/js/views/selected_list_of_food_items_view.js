@@ -9,7 +9,7 @@ var SelectedListOfFoodItems = Backbone.View.extend({
     total_template: _.template($('#total-calories-template').html()),
 
     events: {
-        "click #save-all-button": "save_list",
+        "click #selected-list-save-all-button": "save_list",
         "click #selected-list-clear-all-button": "clear_all"
     },
 
@@ -19,7 +19,7 @@ var SelectedListOfFoodItems = Backbone.View.extend({
         this.total_calories = 0;
         this.listenTo(this.collection, 'add', this.on_model_add);
         this.listenTo(this.collection, 'remove', this.on_remove);
-        this.listenTo(this.collection, 'reset', this.on_model_reset);
+        this.listenTo(this.collection, 'reset', this.on_collection_reset);
         this.render(); 
     },
 
@@ -27,7 +27,9 @@ var SelectedListOfFoodItems = Backbone.View.extend({
 
     save_list: function(){
         //this function should save current list to local storage 
+       console.log("selected-list-save-all-button");
 
+       this.collection.save(); 
     },
 
     clear_all: function(){
@@ -36,8 +38,19 @@ var SelectedListOfFoodItems = Backbone.View.extend({
         this.collection.reset(); 
     }, 
 
-    on_model_reset: function(){
+    on_collection_reset: function(){
+         console.log("on_collection_reset");
          this.$list.empty(); 
+         var self = this; 
+         self.$list.find(".total-calories").remove();
+         this.collection.each(function(item) {
+            console.log("this.collection.each(function(item)");
+            console.log(item);
+            var food_item_view = new FoodItemView({ model: item });
+            self.$list.append(food_item_view.render().el);
+            
+          });
+       self.render(); 
      },
 
     on_remove: function(){

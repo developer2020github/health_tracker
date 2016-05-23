@@ -20,6 +20,10 @@ var SelectedFoodItemsCollection = Backbone.Collection.extend({
         return total_calories; 
 
     },
+
+    save: function(){
+        this.sync("create", this);
+    }
 });
 
     app.selected_items_collection = new SelectedFoodItemsCollection();
