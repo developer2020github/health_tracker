@@ -20,9 +20,9 @@ h2, h4{
 .remove, .select, .save-all, .clear-all{
 	display: inline-block;
 	/*padding: 0;*/
-	border:5px outset #E6E3E3;
+	/*border:5px outset #E6E3E3;*/
 	margin: 5px;
-    border-color: #E6E3E3;
+    /*border-color: #E6E3E3;*/
 }
 
 .save-all, .clear-all{
@@ -44,7 +44,7 @@ h2, h4{
 .total-calories{
 	background-color: #3B51A3;
 	color:#FCEE74;
-	width: 475px;
+	width: 440px;
 	margin: 5px;
 	height: 1em;
 	padding-top: 14px;

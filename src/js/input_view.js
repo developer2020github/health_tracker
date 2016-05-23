@@ -41,10 +41,20 @@ var InputView = Backbone.View.extend({
     },
 
     clear_current_list: function(){
-        
        app.current_items_collection.reset(); 
-    }
+    },
+
+    //this function is used to simplify layout testing - add soem items right away 
+    test: function(){
+      app.nutritonix_handler.get_item_info_post("pizza", 5, this.add_food_item, this);
+
+      app.selected_items_collection.add(new FoodItem({name: "pizza first", calories: 540}));
+      app.selected_items_collection.add(new FoodItem({name: "pizza second long", calories: 450}));
+    } 
 });
 
     app.input_view = new InputView();
 })();
+
+
+app.input_view.test(); 

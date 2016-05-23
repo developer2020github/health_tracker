@@ -4,9 +4,14 @@ var app = app || {};
 
 var SelectedListOfFoodItems = Backbone.View.extend({
 
-    el: '#selected-list',
+    el: 'body',
 
     total_template: _.template($('#total-calories-template').html()),
+
+    events: {
+        "click #save-all-button": "save_list",
+        "click #selected-list-clear-all-button": "clear_all"
+    },
 
     initialize: function() {
         this.$list = $('#selected-list');
@@ -14,9 +19,26 @@ var SelectedListOfFoodItems = Backbone.View.extend({
         this.total_calories = 0;
         this.listenTo(this.collection, 'add', this.on_model_add);
         this.listenTo(this.collection, 'remove', this.on_remove);
+        this.listenTo(this.collection, 'reset', this.on_model_reset);
         this.render(); 
     },
 
+
+
+    save_list: function(){
+        //this function should save current list to local storage 
+
+    },
+
+    clear_all: function(){
+        //this function cleares list of selected items
+        console.log("selected-list-clear-all-button");
+        this.collection.reset(); 
+    }, 
+
+    on_model_reset: function(){
+         this.$list.empty(); 
+     },
 
     on_remove: function(){
         this.$list.find(".total-calories").remove();
