@@ -26,7 +26,7 @@ h2, h4{
 }
 
 .save-all, .clear-all{
-	width: 37%;
+	width: 210px;
 }
 
 
@@ -67,6 +67,9 @@ h2, h4{
 	list-style: none;
 }
 
+.selected-list-buttons{
+	margin-left: 45px;
+}
 /*
  http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css
 http://jsfiddle.net/TB43r/2196/
