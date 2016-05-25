@@ -17,13 +17,24 @@ var InputView = Backbone.View.extend({
         "click #clear-current-list-button": "clear_current_list"
     },
 
-    initialize: function () {
-            this.$entered_item = this.$("#food_item_search_name");
-            this.current_list_view = new ListOfFoodItems({collection: app.current_items_collection});
-            console.log(" app.selected_items_collection.fetch();");
-            app.selected_items_collection.fetch(); 
-            //this.nutritonix_handler = new NutritonixHandler();
-        },
+    initialize: function() {
+      this.$entered_item = this.$("#food_item_search_name");
+      this.current_list_view = new ListOfFoodItems({ collection: app.current_items_collection });
+      /*console.log(" app.selected_items_collection.fetch();");
+      console.log(app.selected_items_collection.pluck('id'));
+
+      //app.selected_items_collection.fetch({reset: true});
+      var ls = new Backbone.LocalStorage("food_tracker_backbone");
+      console.log(ls.findAll());
+      //app.selected_list_view.on_collection_reset(); 
+      var ls1 = app.selected_items_collection.localStorage;
+      console.log(ls1.findAll());
+      //this.nutritonix_handler = new NutritonixHandler();
+      console.log("app.selected_items_collection.findAll()");
+      console.log(app.selected_items_collection.localStorage.findAll());*/
+  },
+
+
 
   
 
@@ -59,4 +70,10 @@ var InputView = Backbone.View.extend({
 })();
 
 
-app.input_view.test(); 
+//app.input_view.test(); 
+
+///console.log(app.selected_items_collection.pluck('id'));
+app.selected_items_collection.fetch({reset: true});
+app.selected_items_collection.forEach(function(model){
+    console.log("Model in collection: " + model.get("name"));
+});

@@ -25,7 +25,7 @@ var SelectedListOfFoodItems = Backbone.View.extend({
         this.total_calories = 0;
         this.listenTo(this.collection, 'add', this.on_model_add);
         this.listenTo(this.collection, 'remove', this.on_remove);
-        this.listenTo(this.collection, 'reset', this.on_collection_reset);
+        this.listenTo(this.collection, 'reset', this.on_collection_reset, this);
         this.render(); 
     },
 
@@ -49,7 +49,9 @@ var SelectedListOfFoodItems = Backbone.View.extend({
          this.$list.empty(); 
          var self = this; 
          self.$list.find(".total-calories").remove();
-         this.collection.each(function(item) {
+
+
+         app.selected_items_collection.each(function(item) {
             console.log("this.collection.each(function(item)");
             console.log(item);
             var food_item_view = new FoodItemView({ model: item });
@@ -65,12 +67,14 @@ var SelectedListOfFoodItems = Backbone.View.extend({
     },
 
     render: function() {
+        console.log('render');
         var htmlOutput = this.total_template({ calories: this.collection.get_total_calories() });
         this.$list.append(htmlOutput);
         return this;
     },
 
     on_model_add: function(){
+        console.log('on_model_add');
         var last_model = this.collection.at(this.collection.length - 1);
         var food_item_view = new FoodItemView({ model: last_model });
         this.$list.find(".total-calories").remove();

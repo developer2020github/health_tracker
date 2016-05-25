@@ -14,7 +14,7 @@ var app = app || {};
 var SelectedFoodItemsCollection = Backbone.Collection.extend({
     model: FoodItem,
 
-    localStorage: new Backbone.LocalStorage('food-tracker-backbone'),
+    localStorage: new Backbone.LocalStorage('food_tracker_backbone'),
 
 
 
@@ -27,10 +27,18 @@ var SelectedFoodItemsCollection = Backbone.Collection.extend({
 
     },
 
-    save: function(){
+    /*save: function(){
         this.sync("create", this);
-    }
+    }*/
+    save: function(){
+    this.each(function (item) {
+                item.save();
+            });
+
+     }
 });
 
     app.selected_items_collection = new SelectedFoodItemsCollection();
+   
+
 })();
