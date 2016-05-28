@@ -41,7 +41,9 @@ var SelectedListOfFoodItems = Backbone.View.extend({
     clear_all: function(){
         //this function cleares list of selected items
         console.log("selected-list-clear-all-button");
-        this.collection.reset(); 
+        //this.collection.reset(); 
+        this.collection.clear_all(); 
+        this.on_collection_reset(); 
     }, 
 
     on_collection_reset: function(){
