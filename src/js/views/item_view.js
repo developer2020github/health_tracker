@@ -27,7 +27,6 @@ var FoodItemView = Backbone.View.extend({
     },
 
     render: function() {
-
         var htmlOutput = this.template(this.model.toJSON());
         this.$el.html(htmlOutput);
         return this;
@@ -44,7 +43,5 @@ var FoodItemView = Backbone.View.extend({
     select_item: function() {
         this.model.select();
         app.selected_items_collection.add(this.model.clone());
-        //this.model.destroy();
-        //this.remove();
     }
 });

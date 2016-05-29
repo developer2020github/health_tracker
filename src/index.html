@@ -12,17 +12,20 @@
 </head>
 
 <body>
-    <h2>Health tracker (calories calulator)</h2>
+    <h2>Health tracker (calories calculator)</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-6 local">
                 <h4>Enter food item:</h4>
-                <input id="food_item_search_name" , type="text" value="Type here">
-                <button id="food-item-search-button">search</button>
-                <button id="clear-current-list-button">clear</button>
+                <div class = "input-group">
+                <input id="food_item_search_name" , type="text", class = "input-field" value="Type here">
+                <button id="food-item-search-button", class="search-btn">search</button>
+                <button id="clear-current-list-button", class="clear-btn">clear</button>
+                </div>
                 <div>
                     <ul class="list-of-items" id="current-list"></ul>
                 </div>
+                
             </div>
             <div class="col-md-6 local">
                 <div>
@@ -60,7 +63,7 @@
     </script>
     <script type="text/template" id="total-calories-template">
         <span class = "total-calories">
-        Total calories  : 
+        Total calories selected : 
          <%= calories %>
         </span>
     </script>

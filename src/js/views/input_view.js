@@ -20,23 +20,7 @@ var InputView = Backbone.View.extend({
     initialize: function() {
       this.$entered_item = this.$("#food_item_search_name");
       this.current_list_view = new ListOfFoodItems({ collection: app.current_items_collection });
-      /*console.log(" app.selected_items_collection.fetch();");
-      console.log(app.selected_items_collection.pluck('id'));
-
-      //app.selected_items_collection.fetch({reset: true});
-      var ls = new Backbone.LocalStorage("food_tracker_backbone");
-      console.log(ls.findAll());
-      //app.selected_list_view.on_collection_reset(); 
-      var ls1 = app.selected_items_collection.localStorage;
-      console.log(ls1.findAll());
-      //this.nutritonix_handler = new NutritonixHandler();
-      console.log("app.selected_items_collection.findAll()");
-      console.log(app.selected_items_collection.localStorage.findAll());*/
   },
-
-
-
-  
 
     add_food_item: function(item_name, n_calories, self) {
         var new_item = new FoodItem({
@@ -44,7 +28,6 @@ var InputView = Backbone.View.extend({
             calories: n_calories
         });
         app.current_items_collection.add_if_does_not_exist(new_item);
-        //self.current_list_view.add_item(new_item);
     },
 
     add_food_items:  function() {
@@ -71,9 +54,5 @@ var InputView = Backbone.View.extend({
 
 
 //app.input_view.test(); 
-
 ///console.log(app.selected_items_collection.pluck('id'));
 app.selected_items_collection.fetch({reset: true});
-app.selected_items_collection.forEach(function(model){
-    console.log("Model in collection: " + model.get("name"));
-});

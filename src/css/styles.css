@@ -25,8 +25,29 @@ h2, h4{
     /*border-color: #E6E3E3;*/
 }
 
+.search-btn, .clear-btn{
+	height: 3em;
+	border-radius: 5px;
+	display: inline-block;
+	margin: 5px;
+	width: 82px;
+}
+
+
+.input-group{
+	margin-left: 75px;
+}
+
 .save-all, .clear-all{
 	width: 210px;
+}
+
+.input-field{
+   display: inline-block;
+   width: 250px;
+   margin: 5px;
+   height: 3em;
+   border-radius: 5px;
 }
 
 
