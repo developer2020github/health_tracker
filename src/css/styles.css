@@ -62,10 +62,8 @@ h2, h4{
 	margin: 5px;
 }
 
-.total-calories{
-	background-color: #3B51A3;
-	color:#FCEE74;
-	width: 440px;
+.message-bar{
+	width: 435px;
 	margin: 5px;
 	height: 1em;
 	padding-top: 14px;
@@ -75,6 +73,16 @@ h2, h4{
 	vertical-align: middle;
 	border-radius: 5px;
 	/*box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);*/
+}
+
+.total-calories{
+	background-color: #3B51A3;
+	color:#ECF898;
+}
+
+.error-display{
+	background-color: #FFCD05;
+	color:#25282B;
 }
 
 .food-item-calories{

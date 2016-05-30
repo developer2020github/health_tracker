@@ -17,6 +17,8 @@ var InputView = Backbone.View.extend({
         "click #clear-current-list-button": "clear_current_list"
     },
 
+  
+
     initialize: function() {
       this.$entered_item = this.$("#food_item_search_name");
       this.current_list_view = new ListOfFoodItems({ collection: app.current_items_collection });
@@ -30,10 +32,15 @@ var InputView = Backbone.View.extend({
         app.current_items_collection.add_if_does_not_exist(new_item);
     },
 
+    show_error_message: function(self) {
+       self.current_list_view.show_error_message(); 
+    }, 
+
     add_food_items:  function() {
         console.log('add_food_items');
+        this.current_list_view.clear_error_message(); 
         var user_entered_item = this.$entered_item.val();
-        app.nutritonix_handler.get_item_info_post(user_entered_item, 5, this.add_food_item, this);
+        app.nutritonix_handler.get_item_info_post(user_entered_item, 5, this.add_food_item, this.show_error_message, this);
     },
 
     clear_current_list: function(){
@@ -56,3 +63,4 @@ var InputView = Backbone.View.extend({
 //app.input_view.test(); 
 ///console.log(app.selected_items_collection.pluck('id'));
 app.selected_items_collection.fetch({reset: true});
+//app.input_view.show_error_message(); 

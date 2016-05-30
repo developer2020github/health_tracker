@@ -55,7 +55,7 @@ NutritonixHandler.prototype.get_item_info = function(food_name){
 }
 
 
-NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback, self) {
+NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback, error_callback, self) {
 //http://stackoverflow.com/questions/11456771/using-json-post-request
 //var resultDiv = $("#resultDivContainer");
 var name = item_name+"*";
@@ -95,8 +95,9 @@ var data2 = {
             //console.log(result.hits[0].fields);
         },
         error: function (xhr, ajaxOptions, thrownError) {
-        alert(xhr.status);
-        alert(thrownError);
+        //alert(xhr.status);
+        //alert(thrownError);
+          error_callback(self); 
         }
     });
 }

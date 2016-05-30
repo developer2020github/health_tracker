@@ -41,6 +41,4 @@ var app = app || {};
     });
 
     app.selected_items_collection = new SelectedFoodItemsCollection();
-
-
 })();

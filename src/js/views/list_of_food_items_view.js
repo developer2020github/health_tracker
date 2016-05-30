@@ -9,6 +9,8 @@ var ListOfFoodItems = Backbone.View.extend({
        
 	el: '#current-list',
 
+    error_template: _.template($('#error-message-template').html()),
+
     initialize: function () {
     	this.$list=$('#current-list');
     	this.listenTo(this.collection, 'add', this.on_model_add);
@@ -23,6 +25,16 @@ var ListOfFoodItems = Backbone.View.extend({
 
      on_model_reset: function(){
         this.$list.empty(); 
-     }
+     }, 
+
+     clear_error_message: function(){
+        this.$list.find(".error-display").remove();
+     },
+
+    show_error_message: function() {
+        var htmlOutput = this.error_template({"message": "something went wrong...please retry"});
+        this.clear_error_message(); 
+        this.$list.append(htmlOutput);
+    }, 
 
 	});
