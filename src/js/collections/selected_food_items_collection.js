@@ -1,9 +1,11 @@
 //========================================================
-//Health tracker
+//Health tracker(calories calculator)
 //2016
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //======================================================== 
+//this collection includes itesm that were selected by user
+
 var app = app || {};
 
 (function() {
@@ -11,28 +13,29 @@ var app = app || {};
     var SelectedFoodItemsCollection = Backbone.Collection.extend({
         model: FoodItem,
 
+        //use local storage - in case user wants to save the list
         localStorage: new Backbone.LocalStorage('food_tracker_backbone'),
 
 
+        //this method return a sum of calories of all items in collection 
         get_total_calories: function() {
             var total_calories = 0.0;
             this.each(function(item) {
                 total_calories = total_calories + item.get("calories");
             });
             return total_calories;
-
         },
 
 
+        //this method saves items in collection into local storage
         save: function() {
             this.each(function(item) {
                 item.save();
             });
-
         },
 
-        clear_all: function() {
         //this method clears all models from local storage
+        clear_all: function() {
             var length = this.length;
             for (var i = 0; i < length; i++) {
                 this.at(0).destroy();

@@ -1,23 +1,29 @@
 //========================================================
-//Health tracker
+//Health tracker(calories calculator)
 //2016
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //======================================================== 
-var FoodItem  = Backbone.Model.extend({
-  
-  select: function(){
-  	this.set({selected: true});
-  },
+//This is a model for food item. Methods and properties are self-explanatory
+//select/deselect methods are not really used in current version, 
+//but keep them in - may decide to fruther enhance the application
+var FoodItem = Backbone.Model.extend({
 
-  decelect: function(){
-  	this.set({selected: false});
-  },
 
-  defaults: {
-    name: '',
-    selected: false,
-    calories: 0
-  },
+    select: function() {
+        this.set({ selected: true });
+    },
+
+
+    decelect: function() {
+        this.set({ selected: false });
+    },
+
+
+    defaults: {
+        name: '',
+        selected: false,
+        calories: 0
+    },
 
 });
