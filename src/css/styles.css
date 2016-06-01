@@ -1,122 +1,135 @@
-
-body, input, button, select, option, textarea{
-    font-family: Arial, Helvetica, sans-serif;
+body,
+input,
+button,
+select,
+option,
+textarea {
+    font-family: arial, helvetica, sans-serif;
     font-size: 14px;
     text-align: center;
 }
 
-body{
-	background-color: #3B3A3A;
-}
-h2, h4{
-	color: #F5F4F4;
-}
-.food-item-name, .food-item-calories, .save-all, .clear-all, .remove, .select, .food-item-internal, .calories-internal{
-	height: 3em;
-	border-radius: 5px;
-	/*box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);*/
+body {
+    background-color: #3b3a3a;
 }
 
-.remove, .select, .save-all, .clear-all{
-	display: inline-block;
-	/*padding: 0;*/
-	/*border:5px outset #E6E3E3;*/
-	margin: 5px;
-    /*border-color: #E6E3E3;*/
+h2,
+h4 {
+    color: #f5f4f4;
 }
 
-.search-btn, .clear-btn{
-	height: 3em;
-	border-radius: 5px;
-	display: inline-block;
-	margin: 5px;
-	width: 82px;
+.food-item-name,
+.food-item-calories,
+.save-all,
+.clear-all,
+.remove,
+.select,
+.food-item-internal,
+.calories-internal {
+    height: 3em;
+    border-radius: 5px;
+}
+
+.remove,
+.select,
+.save-all,
+.clear-all {
+    display: inline-block;
+    margin: 5px;
+}
+
+.search-btn,
+.clear-btn {
+    height: 3em;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px;
+    width: 82px;
+}
+
+.input-group {
+    margin-left: 75px;
+}
+
+.save-all,
+.clear-all {
+    width: 210px;
+}
+
+.input-field {
+    display: inline-block;
+    width: 250px;
+    margin: 5px;
+    height: 3em;
+    border-radius: 5px;
+}
+
+.food-item-name,
+.food-item-calories {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.food-item-name {
+    background-color: #30bc7f;
+    width: 250px;
+    margin: 5px;
+}
+
+.message-bar {
+    width: 435px;
+    margin: 5px;
+    height: 1em;
+    padding-top: 14px;
+    padding-bottom: 28px;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.total-calories {
+    background-color: #3b51a3;
+    color: #ecf898;
+}
+
+.error-display {
+    background-color: #ffcd05;
+    color: #25282b;
+}
+
+.food-item-calories {
+    background-color: #f4f5ad;
+    width: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.list-of-items {
+    list-style: none;
+}
+
+.selected-list-buttons {
+    margin-left: 45px;
 }
 
 
-.input-group{
-	margin-left: 75px;
-}
-
-.save-all, .clear-all{
-	width: 210px;
-}
-
-.input-field{
-   display: inline-block;
-   width: 250px;
-   margin: 5px;
-   height: 3em;
-   border-radius: 5px;
-}
-
-
-.food-item-name, .food-item-calories{
-	display: inline-block;
-	vertical-align: middle;
-}
-
-.food-item-name{
-	background-color: #30BC7F;
-	width: 250px;
-	margin: 5px;
-}
-
-.message-bar{
-	width: 435px;
-	margin: 5px;
-	height: 1em;
-	padding-top: 14px;
-	padding-bottom: 28px;
-	font-size: 16px;
-	display: inline-block;
-	vertical-align: middle;
-	border-radius: 5px;
-	/*box-shadow: 10px 5px 10px -1px rgba(0, 0, 0, 0.75);*/
-}
-
-.total-calories{
-	background-color: #3B51A3;
-	color:#ECF898;
-}
-
-.error-display{
-	background-color: #FFCD05;
-	color:#25282B;
-}
-
-.food-item-calories{
-	background-color: #F4F5AD;
-	width: 50px;
-	margin-top:auto;
-    margin-bottom:auto;
-}
-
-.list-of-items{
-	list-style: none;
-}
-
-.selected-list-buttons{
-	margin-left: 45px;
-}
 /*
  http://stackoverflow.com/questions/8865458/how-to-vertically-center-text-with-css
-http://jsfiddle.net/TB43r/2196/
+http://jsfiddle.net/tb43r/2196/
 */
 
-.food-item-internal, .calories-internal{   
+.food-item-internal,
+.calories-internal {
     vertical-align: middle;
     display: table-cell;
     text-align: center;
 }
 
-.food-item-internal{
-	width: 250px;
+.food-item-internal {
+    width: 250px;
 }
 
-.calories-internal{
-	width: 50px;
-    vertical-align: middle;
-    display: table-cell;
-    text-align: center;
-} 
+.calories-internal {
+    width: 50px;
+}

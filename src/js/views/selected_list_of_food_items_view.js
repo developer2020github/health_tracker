@@ -31,6 +31,7 @@ var app = app || {};
             this.listenTo(this.collection, 'reset', this.on_collection_reset, this);
             this.render();
         },
+        
 
         //this method saves current list to local storage
         save_list: function() { 

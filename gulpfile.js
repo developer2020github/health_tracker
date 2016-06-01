@@ -46,7 +46,7 @@ gulp.task('lint_js_console', function() {
 });
 
 gulp.task('lint_js_log', function() {
-  return gulp.src('src/js/*.js')
+  return gulp.src('src/js/*/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('gulp-jshint-file-reporter', {
       filename: __dirname + '/jshint-output.log'

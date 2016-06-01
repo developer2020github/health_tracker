@@ -20,7 +20,7 @@ function httpGetAsync(theUrl, callback_ok, callback_error) {
             callback_ok(xmlHttp.responseText);
             window.clearTimeout(timeoutHandle);
         }
-    }
+    };
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }

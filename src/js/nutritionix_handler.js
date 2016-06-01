@@ -35,7 +35,7 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         },
         "min_score": 0.5,
         "query": name
-    }
+    };
     
     $.ajax({
         url: "https://api.nutritionix.com/v1_1/search/",
@@ -45,12 +45,12 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         success: function(result) {
             $.each(result.hits, function(idx, o) {
                 add_item_callback(o.fields.item_name, o.fields.nf_calories);
-            })
+            });
         },
         error: function(xhr, ajaxOptions, thrownError) {
             error_callback();
         }
     });
-}
+};
 
 app.nutritonix_handler = new NutritonixHandler();
