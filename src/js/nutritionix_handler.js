@@ -13,23 +13,14 @@ var NutritonixHandler = function() {
 };
 
 
-NutritonixHandler.prototype.get_item_info = function(food_name) {
-    food_name = encodeURIComponent(food_name.trim())
-    var search_str = "https://api.nutritionix.com/v1_1/search/" +
-        food_name +
-        "?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=9fc48220&appKey=a3e3cafed57db6fa5ab87d37072dec11"
-    console.log(search_str);
-    var decoded_string = decodeURIComponent(search_str);
-}
-
-
+//use post request to get item info
 NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback, error_callback) {
     //http://stackoverflow.com/questions/11456771/using-json-post-request
     var name = item_name + "*";
 
     var data2 = {
-        "appId": "9fc48220",
-        "appKey": "a3e3cafed57db6fa5ab87d37072dec11",
+        "appId": this.app_id,
+        "appKey": this.API_KEY,
         "fields": [
             "item_name",
             "brand_name",
@@ -45,6 +36,7 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         "min_score": 0.5,
         "query": name
     }
+    
     $.ajax({
         url: "https://api.nutritionix.com/v1_1/search/",
         type: "POST",

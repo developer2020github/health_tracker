@@ -4,7 +4,8 @@
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //======================================================== 
-//this collection includes itesm that were selected by user
+//This collection includes items that were selected by user
+//It supporst saving collection in local storage 
 
 var app = app || {};
 
@@ -33,6 +34,7 @@ var app = app || {};
                 item.save();
             });
         },
+
 
         //this method clears all models from local storage
         clear_all: function() {

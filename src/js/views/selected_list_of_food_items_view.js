@@ -1,9 +1,12 @@
 //========================================================
-//Health tracker
+//Health tracker (calories calculator)
 //2016
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //========================================================
+//thsi view shows list of user-selected food items and 
+//sum of calories.
+
 var app = app || {};
 
 (function() {
@@ -29,25 +32,27 @@ var app = app || {};
             this.render();
         },
 
-
-
-        save_list: function() {
-            //this function should save current list to local storage 
+        //this method saves current list to local storage
+        save_list: function() { 
             this.collection.save();
         },
 
 
+        //this methods cleares list of selected items
         clear_all: function() {
-            //this function cleares list of selected items
+            
             this.collection.clear_all();
             this.on_collection_reset();
         },
 
+
+        //called on reset event of the collection: 
+        //empties list and re-builds it depending on 
+        //content of collection
         on_collection_reset: function() {
             this.$list.empty();
             var self = this;
             self.$list.find(".total-calories").remove();
-
 
             app.selected_items_collection.each(function(item) {
                 var food_item_view = new FoodItemView({ model: item });
@@ -57,17 +62,22 @@ var app = app || {};
             self.render();
         },
 
+
         on_remove: function() {
             this.$list.find(".total-calories").remove();
             this.render();
         },
 
+
+        //commont portion of view updates
         render: function() {
             var htmlOutput = this.total_template({ calories: this.collection.get_total_calories() });
             this.$list.append(htmlOutput);
             return this;
         },
 
+
+        //adds item that was added to the collection
         on_model_add: function() {
             var last_model = this.collection.at(this.collection.length - 1);
             var food_item_view = new FoodItemView({ model: last_model });
