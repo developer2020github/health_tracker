@@ -1,5 +1,5 @@
 //========================================================
-//health tracker
+//health tracker /calories calculator
 //2016
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com

@@ -25,6 +25,7 @@ var app = app || {};
         initialize: function() {
             this.$list = $('#selected-list');
             this.$total_calories_el = $('#total-calories-selected');
+            this.$selected_list_buttons = $('#selected-list-buttons-id');
             this.total_calories = 0;
             this.listenTo(this.collection, 'add', this.on_model_add);
             this.listenTo(this.collection, 'remove', this.on_remove);
@@ -72,8 +73,18 @@ var app = app || {};
 
         //commont portion of view updates
         render: function() {
+            console.log(this.collection.length);
+            if (this.collection.length >0){
+                this.$selected_list_buttons.toggle(true);
+            }else{
+                this.$selected_list_buttons.toggle(false);
+            }
+
+
             var htmlOutput = this.total_template({ calories: this.collection.get_total_calories() });
             this.$list.append(htmlOutput);
+
+
             return this;
         },
 
