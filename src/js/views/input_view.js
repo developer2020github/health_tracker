@@ -59,7 +59,7 @@ var app = app || {};
 (function () {
 
 var InputView = Backbone.View.extend({
-    el: 'body',
+    el: "body",
 
     //main events are user clicking search and clear buttons 
     events: {

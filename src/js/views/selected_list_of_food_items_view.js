@@ -13,9 +13,9 @@ var app = app || {};
 
     var SelectedListOfFoodItems = Backbone.View.extend({
 
-        el: 'body',
+        el: "body",
 
-        total_template: _.template($('#total-calories-template').html()),
+        total_template: _.template($("#total-calories-template").html()),
 
         events: {
             "click #selected-list-save-all-button": "save_list",
@@ -23,13 +23,13 @@ var app = app || {};
         },
 
         initialize: function() {
-            this.$list = $('#selected-list');
-            this.$total_calories_el = $('#total-calories-selected');
-            this.$selected_list_buttons = $('#selected-list-buttons-id');
+            this.$list = $("#selected-list");
+            this.$total_calories_el = $("#total-calories-selected");
+            this.$selected_list_buttons = $("#selected-list-buttons-id");
             this.total_calories = 0;
-            this.listenTo(this.collection, 'add', this.on_model_add);
-            this.listenTo(this.collection, 'remove', this.on_remove);
-            this.listenTo(this.collection, 'reset', this.on_collection_reset, this);
+            this.listenTo(this.collection, "add", this.on_model_add);
+            this.listenTo(this.collection, "remove", this.on_remove);
+            this.listenTo(this.collection, "reset", this.on_collection_reset, this);
             this.render();
         },
         
@@ -71,9 +71,10 @@ var app = app || {};
         },
 
 
-        //commont portion of view updates
+        //common portion of view updates
         render: function() {
-            console.log(this.collection.length);
+
+            //if 
             if (this.collection.length >0){
                 this.$selected_list_buttons.toggle(true);
             }else{

@@ -13,9 +13,9 @@ var app = app || {};
 (function() {
     var CurrentListOfFoodItems = Backbone.View.extend({
 
-        el: 'body',
+        el: "body",
 
-        error_template: _.template($('#error-message-template').html()),
+        error_template: _.template($("#error-message-template").html()),
 
         //main event is user clicking clear button
         events: {
@@ -24,9 +24,9 @@ var app = app || {};
         },
 
         initialize: function() {
-            this.$list = $('#current-list');
-            this.listenTo(this.collection, 'add', this.on_model_add);
-            this.listenTo(this.collection, 'reset', this.on_model_reset);
+            this.$list = $("#current-list");
+            this.listenTo(this.collection, "add", this.on_model_add);
+            this.listenTo(this.collection, "reset", this.on_model_reset);
         },
 
 

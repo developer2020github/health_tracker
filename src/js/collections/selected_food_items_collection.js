@@ -15,7 +15,7 @@ var app = app || {};
         model: FoodItem,
 
         //use local storage - in case user wants to save the list
-        localStorage: new Backbone.LocalStorage('food_tracker_backbone'),
+        localStorage: new Backbone.LocalStorage("food_tracker_backbone"),
 
 
         //this method return a sum of calories of all items in collection 

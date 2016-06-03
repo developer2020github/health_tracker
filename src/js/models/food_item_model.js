@@ -6,7 +6,7 @@
 //======================================================== 
 //This is a model for food item. Methods and properties are self-explanatory
 //select/deselect methods are not really used in current version, 
-//but keep them in - may decide to fruther enhance the application
+//but keep them in - may decide to further enhance the application
 var FoodItem = Backbone.Model.extend({
 
 
