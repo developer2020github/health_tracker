@@ -9,6 +9,7 @@ textarea {
     text-align: center;
 }
 
+
 body {
     background-color: #3b3a3a;
 }
@@ -16,6 +17,11 @@ body {
 h2,
 h4 {
     color: #f5f4f4;
+}
+
+.settings-class{
+   color: white;
+   text-align: left; 
 }
 
 .food-item-name,
