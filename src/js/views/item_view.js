@@ -52,7 +52,14 @@ var FoodItemView = Backbone.View.extend({
     //Additionally, depending on options settings, can clear current list. 
     select_item: function() {
         this.model.select();
-        app.selected_items_collection.add(this.model.clone());
+        var new_model = this.model.clone();
+        //seems that id is added on each "save" automatically.
+        //then, if user tries to click add on a model in selected list - 
+        //clone returns a copy of the model with exaclty same id, 
+        //and it doesn not get added to collection. I actually want a 
+        //new copy of the model to be added, so reset id in the clone. 
+        new_model.unset("id", "silent");
+        app.selected_items_collection.add(new_model);
         if(app.settings.get("clear_current_list_on_selection")){
             app.current_items_collection.reset(); 
         }

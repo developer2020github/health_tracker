@@ -102,7 +102,7 @@ var app = app || {};
 
         auto_save: function() {
             if (app.settings.get("auto_save_selected_list")){
-                this.collection.save();
+               this.collection.save();
             }
 
         }
