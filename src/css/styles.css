@@ -98,6 +98,11 @@ h4 {
     color: #25282b;
 }
 
+.status-display{
+	background-color: #c0fadd;
+	color: black;
+}
+
 .food-item-calories {
     background-color: #f4f5ad;
     width: 50px;

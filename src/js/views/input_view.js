@@ -80,6 +80,8 @@ var InputView = Backbone.View.extend({
             name: item_name,
             calories: n_calories
         });
+        //if at least one item was returned - we can clear status
+        app.current_list_view.clear_status();
         app.current_items_collection.add_if_does_not_exist(new_item);
     },
 
@@ -96,7 +98,9 @@ var InputView = Backbone.View.extend({
     //Nutritonix API to get list of food items. 
     add_food_items:  function() {
         app.current_list_view.clear_error_message(); 
+        app.current_list_view.clear_status();
         var user_entered_item = this.$entered_item.val();
+        app.current_list_view.show_status();
         app.nutritonix_handler.get_item_info_post(user_entered_item, 5, this.add_food_item, this.show_error_message);
     },
 
@@ -117,5 +121,5 @@ var InputView = Backbone.View.extend({
 //fetch items into selected items view if user saved some 
 //in previous sessions.
 app.selected_items_collection.fetch({reset: true});
-app.input_view.test(); 
+//app.input_view.test(); 
 

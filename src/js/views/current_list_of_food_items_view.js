@@ -16,6 +16,7 @@ var app = app || {};
         el: "body",
 
         error_template: _.template($("#error-message-template").html()),
+        status_template: _.template($("#status-message-template").html()),
 
         //main event is user clicking clear button
         events: {
@@ -31,7 +32,7 @@ var app = app || {};
 
 
         //when model is added to collection of the items - append 
-        //its view to th eend of list
+        //its view to the end of list
         on_model_add: function() {
             var last_model = this.collection.at(this.collection.length - 1);
             var food_item_view = new FoodItemView({ model: last_model });
@@ -41,6 +42,8 @@ var app = app || {};
         //this method is called when user clicks clear button 
         clear_current_list: function() {
             this.collection.reset();
+            this.clear_status(); 
+            this.clear_error_message(); 
         },
 
         on_model_reset: function() {
@@ -56,8 +59,18 @@ var app = app || {};
         show_error_message: function() {
             var htmlOutput = this.error_template({ "message": "something went wrong...please retry" });
             this.clear_error_message();
+            this.clear_status(); 
             this.$list.append(htmlOutput);
         },
+
+        show_status: function(){
+             var htmlOutput = this.status_template();
+             this.$list.append(htmlOutput);
+        },
+
+        clear_status: function(){
+            this.$list.find(".status-display").remove();
+        }
 
     });
 
