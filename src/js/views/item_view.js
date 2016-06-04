@@ -49,8 +49,12 @@ var FoodItemView = Backbone.View.extend({
     //2) if it is already in the list of selected item - it should copy itself.
     //(the idea is to allow user to create copies of the same item in case she 
     //wants to see more than one unit in the calries calculator list)
+    //Additionally, depending on options settings, can clear current list. 
     select_item: function() {
         this.model.select();
         app.selected_items_collection.add(this.model.clone());
+        if(app.settings.get("clear_current_list_on_selection")){
+            app.current_items_collection.reset(); 
+        }
     }
 });

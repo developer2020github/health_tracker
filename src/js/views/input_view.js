@@ -117,4 +117,5 @@ var InputView = Backbone.View.extend({
 //fetch items into selected items view if user saved some 
 //in previous sessions.
 app.selected_items_collection.fetch({reset: true});
+app.input_view.test(); 
 
