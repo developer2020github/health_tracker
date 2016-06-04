@@ -9,7 +9,7 @@ Personal project:
 a simple calories calculator single page application built with Backbone and Nutritionix API.
 User can submit search queries to Nutrionix, then add food items to a list 
 of selected items with calories calculation being updated automatically and save selected list into local storage.
-In development.
+There is settings tab that allows user to modify some options for current session.
 
 
 ##Built with (libraries/technologies/APIs used)
