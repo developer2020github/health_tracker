@@ -85,7 +85,7 @@ var app = app || {};
             var htmlOutput = this.total_template({ calories: this.collection.get_total_calories() });
             this.$list.append(htmlOutput);
 
-
+            this.auto_save(); 
             return this;
         },
 
@@ -97,8 +97,15 @@ var app = app || {};
             this.$list.find(".total-calories").remove();
             this.$list.append(food_item_view.render().el);
             this.render();
-        }
+            
+        }, 
 
+        auto_save: function() {
+            if (app.settings.get("auto_save_selected_list")){
+                this.collection.save();
+            }
+
+        }
     });
 
     app.selected_list_view = new SelectedListOfFoodItems({ collection: app.selected_items_collection });
