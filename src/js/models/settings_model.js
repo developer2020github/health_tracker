@@ -11,7 +11,7 @@ var app = app || {};
 (function () {var Settings = Backbone.Model.extend({
 
     defaults: {
-        max_number_of_items_in_search: 5,
+        max_number_of_items_in_search: 20,
         clear_current_list_on_selection: true,
         auto_save_selected_list: true
     },

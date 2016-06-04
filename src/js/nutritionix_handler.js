@@ -16,7 +16,8 @@ var NutritonixHandler = function() {
 //use post request to get item info
 NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_items_to_get, add_item_callback, error_callback) {
     //http://stackoverflow.com/questions/11456771/using-json-post-request
-    var name = item_name + "*";
+    //https://developer.nutritionix.com/v1_1/quick-start/advanced-food-search
+    var name = item_name;
 
     var data2 = {
         "appId": this.app_id,
@@ -33,6 +34,7 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
             "field": "nf_calories",
             "order": "asc"
         },
+
         "min_score": 0.5,
         "query": name
     };
@@ -43,8 +45,8 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         data: data2,
         dataType: "json",
         success: function(result) {
-            $.each(result.hits, function(idx, o) {
-                add_item_callback(o.fields.item_name, o.fields.nf_calories);
+            $.each(result.hits, function(idx, result_value) {
+                add_item_callback(result_value.fields.item_name, result_value.fields.nf_calories);
             });
         },
         error: function(xhr, ajaxOptions, thrownError) {
