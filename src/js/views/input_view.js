@@ -97,9 +97,13 @@ var InputView = Backbone.View.extend({
     //it clears error message (in case it is displayed) and calls
     //Nutritonix API to get list of food items. 
     add_food_items:  function() {
+        var user_entered_item = this.$entered_item.val();
+        if (user_entered_item ===""){
+            return; 
+        }
         app.current_list_view.clear_error_message(); 
         app.current_list_view.clear_status();
-        var user_entered_item = this.$entered_item.val();
+        
         app.current_list_view.show_status();
         app.nutritonix_handler.get_item_info_post(user_entered_item, 5, this.add_food_item, this.show_error_message);
     },

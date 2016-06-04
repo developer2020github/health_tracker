@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <meta charset="utf-8">
     <title>Health tracker </title>
@@ -18,7 +18,7 @@
             <div class="col-md-6 local">
                 <h4>Enter food item:</h4>
                 <div class = "input-group">
-                <input id="food_item_search_name" type="text" class = "input-field" value="Type here">
+                <input id="food_item_search_name" type="text" class = "input-field" placeholder="Type here">
                 <button id="food-item-search-button" class="search-btn">search</button>
                 <button id="clear-current-list-button" class="clear-btn">clear</button>
                 </div>
@@ -78,20 +78,19 @@
         </span>
     </script>
     <!--build:js js/main.min.js -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
-    <script type="text/javascript" src="bower_components/backbone/backbone.js"></script>
-    <script type="text/javascript" src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
-    <script type="text/javascript" src="js/models/settings_model.js"></script>
-    <script type="text/javascript" src="js/nutritionix_handler.js"></script>
-    <script type="text/javascript" src="js/models/food_item_model.js"></script>
-    <script type="text/javascript" src="js/collections/selected_food_items_collection.js"></script>
-    <script type="text/javascript" src="js/views/item_view.js"></script>
-    <script type="text/javascript" src="js/views/selected_list_of_food_items_view.js"></script>
-    
-    <script type="text/javascript" src="js/collections/current_food_items_collection.js"></script>
-    <script type="text/javascript" src="js/views/current_list_of_food_items_view.js"></script>
-    <script type="text/javascript" src="js/views/input_view.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+    <script src="js/models/settings_model.js"></script>
+    <script src="js/nutritionix_handler.js"></script>
+    <script src="js/models/food_item_model.js"></script>
+    <script src="js/collections/selected_food_items_collection.js"></script>
+    <script src="js/views/item_view.js"></script>
+    <script src="js/views/selected_list_of_food_items_view.js"></script>
+    <script src="js/collections/current_food_items_collection.js"></script>
+    <script src="js/views/current_list_of_food_items_view.js"></script>
+    <script src="js/views/input_view.js"></script>
     <!-- endbuild -->
 </body>
 
