@@ -9,21 +9,25 @@ utilizing Backbone. Functionality is rather primitive -
 the purpose of building  the application was to implement some 
 widely used functionality (like using local storage with Backbone or 
 user interaction with several views)
-and not to create something very useful form practical point 
+and not to create something very useful from practical point 
 of view. 
 
 Application calls Nutritionix API with a user entered food item name, 
-and populates current list view with first 5 items returned by Nutritionix.
+and populates current list view with first app.settings.max_number_of_items_in_search 
+items returned by Nutritionix.
 Then user can add these items into selected list of items, 
 delete them, and save selected list of items (this would save it into local storage).
 
-Application consists of 4 views, 2 collections and one model.
+Application consists of 5 views, 2 collections and 2 models.
 
 Model: 
 
-food item model: stores item name and calories. Has couple 
+1) food item model: stores item name and calories. Has couple 
 more fields (selected) but they are not used in current version 
 of the application. 
+
+2) settings model: stores application settings. Some can be 
+changed by user via settings tab.
 
 Views:
 
@@ -43,6 +47,9 @@ Views:
  items into local storage. 
 
  4) item view - view for a single food item
+
+ 5) settings view - supports GUI for settings tab (allows user to change some 
+ settings)
 
  Collections: 
 
