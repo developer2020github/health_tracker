@@ -30,11 +30,6 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         ],
         "offset": 0,
         "limit": number_of_items_to_get,
-        "sort": {
-            "field": "nf_calories",
-            "order": "asc"
-        },
-
         "min_score": 0.5,
         "query": name
     };
