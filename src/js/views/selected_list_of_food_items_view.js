@@ -74,13 +74,11 @@ var app = app || {};
         //common portion of view updates
         render: function() {
 
-            //if 
             if (this.collection.length >0){
                 this.$selected_list_buttons.toggle(true);
             }else{
                 this.$selected_list_buttons.toggle(false);
             }
-
 
             var htmlOutput = this.total_template({ calories: this.collection.get_total_calories() });
             this.$list.append(htmlOutput);

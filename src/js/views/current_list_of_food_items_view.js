@@ -42,8 +42,8 @@ var app = app || {};
         //this method is called when user clicks clear button 
         clear_current_list: function() {
             this.collection.reset();
-            this.clear_status(); 
-            this.clear_error_message(); 
+            this.clear_status();
+            this.clear_error_message();
         },
 
         on_model_reset: function() {
@@ -56,19 +56,24 @@ var app = app || {};
         },
 
 
-        show_error_message: function() {
-            var htmlOutput = this.error_template({ "message": "something went wrong...please retry" });
+        show_error_message: function(msg) {
+            var error_message = "something went wrong...please retry";
+            if (msg !== undefined) {
+                error_message = msg;
+            }
+
+            var htmlOutput = this.error_template({ "message": error_message });
             this.clear_error_message();
-            this.clear_status(); 
+            this.clear_status();
             this.$list.append(htmlOutput);
         },
 
-        show_status: function(){
-             var htmlOutput = this.status_template();
-             this.$list.append(htmlOutput);
+        show_status: function() {
+            var htmlOutput = this.status_template();
+            this.$list.append(htmlOutput);
         },
 
-        clear_status: function(){
+        clear_status: function() {
             this.$list.find(".status-display").remove();
         }
 

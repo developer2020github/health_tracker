@@ -38,16 +38,20 @@ NutritonixHandler.prototype.get_item_info_post = function(item_name, number_of_i
         "min_score": 0.5,
         "query": name
     };
-    
+
     $.ajax({
         url: "https://api.nutritionix.com/v1_1/search/",
         type: "POST",
         data: data2,
         dataType: "json",
         success: function(result) {
-            $.each(result.hits, function(idx, result_value) {
-                add_item_callback(result_value.fields.item_name, result_value.fields.nf_calories);
-            });
+            if (result.hits.length > 0) {
+                $.each(result.hits, function(idx, result_value) {
+                    add_item_callback(result_value.fields.item_name, result_value.fields.nf_calories);
+                });
+            } else {
+                error_callback("item not found in Nutritionix");
+            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
             error_callback();

@@ -91,8 +91,8 @@ var app = app || {};
 
         //this is callback to be passed to Nutritionix API 
         //to be called in case of error. 
-        show_error_message: function() {
-            app.current_list_view.show_error_message();
+        show_error_message: function(msg) {
+            app.current_list_view.show_error_message(msg);
         },
 
 
