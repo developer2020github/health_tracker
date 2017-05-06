@@ -1,10 +1,10 @@
 
-##Project title
-######[Health tracker/calories calculator](http://developer2020github.github.io/health_tracker/dist/ "link to project page")
+## Project title
+###### [Health tracker/calories calculator](http://developer2020github.github.io/health_tracker/dist/ "link to project page")
 Author: developer2020 (<dev276236@gmail.com> )
 2016
 
-##Project overview
+## Project overview
 Personal project: 
 a simple calories calculator single page application built with Backbone and Nutritionix API.
 User can submit search queries to Nutrionix, then add food items to a list 
@@ -12,23 +12,23 @@ of selected items with calories calculation being updated automatically and save
 There is settings tab that allows user to modify some options for current session.
 
 
-##Built with (libraries/technologies/APIs used)
-#####Application itself:
+## Built with (libraries/technologies/APIs used)
+##### Application itself:
 * Backbone
 * jQuery
 * Bootstrap
 * Nutritionix API
 
-#####Build process:
+##### Build process:
 
 * Gulp
 * Bower
 
-###Running the application
+### Running the application
 
 You do not need to rebuild the application to check it out (built version is provided), just get it from GuitHub and open index.html, located in dist sub-folder with a browser. You can also just follow the [link](http://developer2020github.github.io/health_tracker/dist/ "link to project page")
 
-####Installing all the source and rebuilding the application.
+#### Installing all the source and rebuilding the application.
 
 Application utilizes Bower for package management and Gulp for builds.
 There are two main sub-folders:
