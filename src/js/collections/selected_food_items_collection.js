@@ -24,7 +24,7 @@ var app = app || {};
             this.each(function(item) {
                 total_calories = total_calories + item.get("calories");
             });
-            return total_calories;
+            return total_calories.toFixed(1);
         },
 
 
