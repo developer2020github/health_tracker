@@ -77,9 +77,10 @@ h4 {
 }
 
 .food-item-name {
-    background-color: #30bc7f;
+    background-color: #E4E1E1;
     width: 250px;
     margin: 5px;
+    font-weight: bold;
 }
 
 .message-bar {
@@ -95,7 +96,7 @@ h4 {
 }
 
 .total-calories {
-    background-color: #3b51a3;
+    background-color: #1C1B1B;
     color: #ecf898;
 }
 
