@@ -96,8 +96,9 @@ h4 {
 }
 
 .total-calories {
-    background-color: #1C1B1B;
-    color: #ecf898;
+    background-color: #2C2A2A;
+    color: #F9FBED;
+    font-weight: bold;
 }
 
 .error-display {
