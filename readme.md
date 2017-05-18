@@ -1,6 +1,6 @@
 
 ## Project title
-###### [Health tracker/calories calculator](http://developer2020github.github.io/health_tracker/dist/ "link to project page")
+###### [Calories calculator](http://developer2020github.github.io/health_tracker/dist/ "link to project page")
 Author: developer2020 (<dev276236@gmail.com> )
 2016-2017
 
