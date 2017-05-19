@@ -86,9 +86,10 @@ var app = app || {};
         //into collection of currently displayed items. It is 
         //passed as an "ok" callback to Nutritionix API. 
         add_food_item: function(item_name, n_calories) {
+            var rounded_calories = parseInt(n_calories.toFixed(0));
             var new_item = new FoodItem({
                 name: item_name,
-                calories: n_calories
+                calories: rounded_calories
             });
             //if at least one item was returned - we can clear status
             app.current_list_view.clear_status();

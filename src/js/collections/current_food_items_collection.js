@@ -29,7 +29,7 @@ var CurrentFoodItemsCollection = Backbone.Collection.extend({
     },
 
 
-    //this method adds item into collection if it is not it yet
+    //this method adds item into collection if it is not in yet
     add_if_does_not_exist: function (item){
         if (!(this.item_exists(item))){
             this.add(item);
