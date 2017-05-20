@@ -1,5 +1,5 @@
 //========================================================
-//Health tracker (calories calculator)
+//Calories calculator
 //2016 - 2017
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
@@ -55,8 +55,8 @@ var FoodItemView = Backbone.View.extend({
         var new_model = this.model.clone();
         //seems that id is added on each "save" automatically.
         //then, if user tries to click add on a model in selected list - 
-        //clone returns a copy of the model with exaclty same id, 
-        //and it doesn not get added to collection. I actually want a 
+        //clone returns a copy of the model with exactly same id, 
+        //and it does not get added to collection. I actually want a 
         //new copy of the model to be added, so reset id in the clone. 
         new_model.unset("id", "silent");
         app.selected_items_collection.add(new_model);

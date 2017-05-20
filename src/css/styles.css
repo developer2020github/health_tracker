@@ -75,13 +75,12 @@ h4 {
     display: inline-block;
     vertical-align: middle;
     font-weight: bold;
+    background-color: #E4E1E1;
 }
 
 .food-item-name {
-    background-color: #E4E1E1;
     width: 250px;
     margin: 5px;
-    
 }
 
 .message-bar {
@@ -96,7 +95,7 @@ h4 {
     border-radius: 5px;
 }
 
-.total-calories {
+.total-calories{
     background-color: #2C2A2A;
     color: #F9FBED;
     font-weight: bold;
@@ -113,7 +112,6 @@ h4 {
 }
 
 .food-item-calories {
-    background-color: #f4f5ad;
     width: 50px;
     margin-top: auto;
     margin-bottom: auto;

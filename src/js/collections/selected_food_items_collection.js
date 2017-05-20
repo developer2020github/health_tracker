@@ -1,11 +1,11 @@
 //========================================================
-//Health tracker(calories calculator)
+//Calories calculator
 //2016 - 2017
 //Author:  developer2020 
 //e-mail:  dev276236@gmail.com
 //======================================================== 
 //This collection includes items that were selected by user
-//It supporst saving collection in local storage 
+//It supports saving collection in local storage 
 
 var app = app || {};
 
