@@ -12,7 +12,7 @@ var app = app || {};
 
         defaults: {
             max_number_of_items_in_search: 10,
-            clear_current_list_on_selection: true,
+            clear_current_list_on_selection: false,
             auto_save_selected_list: true
         },
     });
