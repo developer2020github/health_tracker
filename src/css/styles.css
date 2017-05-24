@@ -156,3 +156,10 @@ http://jsfiddle.net/tb43r/2196/
     color: #D5FFF8;
 
 }
+
+.nav-tabs > li > a{
+  color: #B7B7B7 !important;
+}
+.nav-tabs > li > a:hover{
+    color:black !important;
+}
